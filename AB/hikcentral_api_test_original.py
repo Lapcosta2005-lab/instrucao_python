@@ -149,21 +149,16 @@ def get_pictures(pic_uri):
         f.write(img)
     return img
 
-dt_start = "2025-04-28T19:00:00-03:00"
-dt_end = "2025-04-28T19:30:30-03:00"
+dt_start = "2025-04-24T08:00:00-03:00"
+dt_end = "2025-04-24T17:23:30-03:00"
 cameras = get_cameras()
 print(json.dumps(cameras['data']['list'], indent=4))
 
-#records = get_records(335, dt_start, dt_end, 10)
-#registros = records['data']['list']
-# Itera sobre a lista em ordem inversa
-#for registro in reversed(registros):
-#    print(json.dumps(registro, indent=4))
-
-
+#records = get_records(1020, dt_start, dt_end, 10)
 #print(json.dumps(records['data']['list'], indent=4))
 #picture = get_pictures(records['data']['list'][0]['vehiclePicUri'])
 #print(picture)
+
 
 # primeiro descobrir o index do ponto atraves da função cameras
 # Depois comentar cameras e descomentar records, trocando o index, consegue ver a ultima passagem detectada.
