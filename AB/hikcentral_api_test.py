@@ -149,8 +149,8 @@ def get_pictures(pic_uri):
         f.write(img)
     return img
 
-dt_start = "2025-04-29T19:00:00-03:00"
-dt_end = "2025-04-29T19:30:30-03:00"
+dt_start = "2025-04-30T08:00:00-03:00"
+dt_end = "2025-04-30T09:15:30-03:00"
 #cameras = get_cameras()
 #print(json.dumps(cameras['data']['list'], indent=4))
 
