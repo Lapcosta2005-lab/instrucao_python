@@ -173,7 +173,7 @@ class CameraProcessor:
         # Formatar com os dois pontos no fuso horário (-03:00)
         hora_formatada = hora_atual.strftime('%Y-%m-%dT%H:%M:%S%z')
         return hora_formatada[:-2] + ':' + hora_formatada[-2:]
-
+    
     def corrigir_Latlong(self,numero_str):
          # Verifica se é uma string e remove espaços, se necessário
         numero_str = numero_str.strip()
@@ -187,11 +187,17 @@ class CameraProcessor:
                 datahora = None
                 #car_type = "indisponivel"
                 dt_start = self.le_ArquivoAzure(f"{self.id}{self.cidade}.txt") #azure
+
+                print(f"Data/Hora lida do arquivo: {dt_start}")  # *** Linha adicionada por LUIZ COSTA***
+
                 dt_start_2 = datetime.fromisoformat(dt_start)
                 dt_start_2 = dt_start_2 + timedelta(seconds=1) #necessario para nao repetir o ultimo veiculo
                 dt_start_3 = dt_start_2.isoformat() 
                 #dt_start = "2025-01-21T10:30:00-03:00"
                 hora_formatada_atual = self.hora_atual_formatada()
+
+                print(f"Hora formatada atual: {hora_formatada_atual}")  # *** Linha adicionada por LUIZ COSTA***
+
                 dt_end = hora_formatada_atual
        
                 data1 = datetime.fromisoformat(dt_start)
@@ -373,3 +379,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
