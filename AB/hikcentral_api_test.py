@@ -151,15 +151,14 @@ def get_pictures(pic_uri):
 
 dt_start = "2025-04-30T08:00:00-03:00"
 dt_end = "2025-04-30T09:15:30-03:00"
-#cameras = get_cameras()
-#print(json.dumps(cameras['data']['list'], indent=4))
+cameras = get_cameras()
+print(json.dumps(cameras['data']['list'], indent=4))
 
-records = get_records(190, dt_start, dt_end, 10)
-registros = records['data']['list']
+#records = get_records(190, dt_start, dt_end, 10)
+#registros = records['data']['list']
 # Itera sobre a lista em ordem inversa
-for registro in reversed(registros):
-    print(json.dumps(registro, indent=4))
-
+#for registro in reversed(registros):
+#    print(json.dumps(registro, indent=4))
 
 #print(json.dumps(records['data']['list'], indent=4))
 #picture = get_pictures(records['data']['list'][0]['vehiclePicUri'])
