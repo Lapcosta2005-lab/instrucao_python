@@ -154,7 +154,7 @@ dt_end = "2025-04-30T09:15:30-03:00"
 cameras = get_cameras()
 print(json.dumps(cameras['data']['list'], indent=4))
 
-#records = get_records(190, dt_start, dt_end, 10)
+#records = get_records(27, dt_start, dt_end, 10)
 #registros = records['data']['list']
 # Itera sobre a lista em ordem inversa
 #for registro in reversed(registros):
