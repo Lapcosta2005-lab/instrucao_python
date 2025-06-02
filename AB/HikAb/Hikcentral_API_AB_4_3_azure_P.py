@@ -216,7 +216,7 @@ class CameraProcessor:
                 if not records:
                      print('Camera off line ou erro')
                 else:
-                    for record in records['data']['list']:
+                    for record in reversed(records['data']['list']): #INVERTE A ORDEM DE LEITURA DO JSON:
                         linha = record['vehicleDirectionType']
                         placa = record['plateNo']
                         #print(placa)
@@ -352,7 +352,8 @@ def main():
     # Lê o arquivo CSV
     #local_arquivo =r'/home/prf/Desktop/bots/HikAb/config_hikcenter.csv' #dados acesso
     local_arquivo =r'C:\Users\SEINT-RS\Documents\python_Exercícios\AB\HikAb\config_hikcenter.csv' #dados acesso ThinkPad Costa
-    #local_arquivo =r'C:\Users\Detentor Patrimonial\Documents\Python Impressionador\AB\HikAb\config_hikcenter.csv' #dados acesso Dell Costa           
+    #local_arquivo =r'C:\Users\Detentor Patrimonial\Documents\Python Impressionador\AB\HikAb\config_hikcenter.csv' #dados acesso Dell Costa   
+    #local_arquivo =r'/home/lapcosta2005/Documentos/Programação/AB/HikAb/config_hikcenter.csv'   # dados acesso HP Linux Luiz Costa      
     #local_arquio = 'https://storageprivadospia.blob.core.windows.net/hikvision/dados_Jardim_Alegre_PR.csv?sp=racwdyti&st=2025-01-21T17:47:21Z&se=2026-06-18T01:47:21Z&sv=2022-11-02&sr=b&sig=xOe0n8h%2BwMUvqHj6%2BgFKlbMZdZOM5tzCy%2FBfPnzdVfU%3D'
     path_dados = local_arquivo
     df = pd.read_csv(path_dados, encoding='UTF-8', delimiter=';')
