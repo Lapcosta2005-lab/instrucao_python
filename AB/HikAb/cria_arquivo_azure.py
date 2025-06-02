@@ -5,7 +5,7 @@ import json
 sas_url = "https://storageprivadospia.blob.core.windows.net/hikvision?sp=racwdli&st=2024-11-19T18:47:55Z&se=2027-11-20T02:47:55Z&sv=2022-11-02&sr=c&sig=SzM2nM6aZf01JPxrmyTozw%2FZDfo7YwbLK1XY9Y9jQ8E%3D"
 
 # Nome do arquivo a ser enviado - padrao: códigocidade.txt
-blob_name = "11SAO LUIZ GONZAGA.txt"
+blob_name = "12MACAMBARA.txt"
 
 # Conteúdo JSON a ser enviado
 data = {
