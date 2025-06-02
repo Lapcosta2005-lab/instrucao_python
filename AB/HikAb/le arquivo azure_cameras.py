@@ -2,14 +2,11 @@ from azure.storage.blob import BlobClient
 import json
 
 # URL SAS do seu contêiner
-sas_url = "https://storageprivadospia.blob.core.windows.net/hikvision?sp=racwdli&st=2024-11-19T18:47:55Z&se=2027-11-20T02:47:55Z&sv=2022-11-02&sr=c&sig=SzM2nM6aZf01JPxrmyTozw%2FZDfo7YwbLK1XY9Y9jQ8E%3D"
+sas_url = "https://storageprivadospia.blob.core.windows.net/intelbras?sp=racwdli&st=2025-05-14T14:44:18Z&se=2030-05-14T22:44:18Z&sv=2024-11-04&sr=c&sig=xvHwKrxe5gl24xLcVxD8plgeUwkpnNFnnW1WB9jhBA8%3D"
 
 # Nome do arquivo a ser lido
-#blob_name = "1JARDIM_ALEGRE.txt"
-#blob_name = "29SANTA_HELENA.txt"
-blob_name = "9JAGUARI.txt"
-#blob_name = "12MACAMBARA.txt"
-
+blob_name = "cameras_hik_rs.txt"
+#blob_name = "4JARDIM_ALEGRE.txt"
 # Separar a URL base e o token SAS
 base_url = sas_url.split('?')[0]
 sas_token = sas_url.split('?')[1]
@@ -36,4 +33,4 @@ print(conteudo_texto)
 
 print("\nDados JSON:")
 print(type(data))
-print(data.get('dataHora'))
+#print(data.get('dataHora'))
