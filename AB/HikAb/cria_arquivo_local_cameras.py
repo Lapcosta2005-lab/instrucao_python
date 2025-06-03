@@ -1,4 +1,8 @@
-[
+import json
+# Não precisamos mais importar BlobClient do azure.storage.blob
+
+# O conteúdo JSON a ser salvo
+data = [
     {
         "ID": "1",
         "COD_CID": "4316907",
@@ -130,11 +134,11 @@
         "NOME_PONTO_1": "LPR BR287 KM 534-1",
         "NOME_PONTO_2": "LPR BR287 KM 534-2",
         "LAT": "-29475511",
-        "LONG": "-55527000",
+        "LONG": "-54689568", 
         "EMPRESA": "HIKVISION-RS",
         "KEY": "915DC9E2322541649496996A182313"
     },
-    {
+   {
         "ID": "10",
         "COD_CID": "4304655",
         "CIDADE": "CAPAO DO CIPO",
@@ -149,7 +153,7 @@
         "EMPRESA": "HIKVISION-RS",
         "KEY": "915DC9E2322541649496996A182313"
     },
-    {
+   {
         "ID": "11",
         "COD_CID": "4318903",
         "CIDADE": "SAO LUIZ GONZAGA",
@@ -164,7 +168,7 @@
         "EMPRESA": "HIKVISION-RS",
         "KEY": "915DC9E2322541649496996A182313"
     },
-    {
+   {
         "ID": "12",
         "COD_CID": "4311718",
         "CIDADE": "MACAMBARA",
@@ -180,3 +184,24 @@
         "KEY": "915DC9E2322541649496996A182313"
     }
 ]
+
+# Caminho completo para o arquivo local onde você quer salvar
+caminho_arquivo_local = r"C:\Users\bdi12\Documents\codigos_python\AB\HikAb\cameras.txt"
+
+# Converter a estrutura de dados Python (lista de dicionários) em uma string JSON
+# O indent=4 formata o JSON para ser mais legível no arquivo
+json_data_formatado = json.dumps(data, indent=4, ensure_ascii=False) # Adicionado ensure_ascii=False para caracteres especiais
+
+# Salvar o conteúdo JSON no arquivo local especificado
+# O modo 'w' abre o arquivo para escrita, criando-o se não existir ou sobrescrevendo se existir.
+# Usamos 'encoding="utf-8"' para garantir que o arquivo seja salvo com a codificação correta.
+try:
+    with open(caminho_arquivo_local, 'w', encoding='utf-8') as arquivo_local:
+        arquivo_local.write(json_data_formatado)
+
+    print(f"O conteúdo JSON foi salvo com sucesso em {caminho_arquivo_local}")
+
+except Exception as e:
+    print(f"Ocorreu um erro ao tentar salvar o arquivo: {e}")
+    print(f"Verifique se o caminho '{caminho_arquivo_local}' existe e se você tem permissões de escrita.")
+
