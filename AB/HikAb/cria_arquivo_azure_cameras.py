@@ -5,7 +5,7 @@ import json
 sas_url = "https://storageprivadospia.blob.core.windows.net/intelbras?sp=racwdli&st=2025-05-14T14:44:18Z&se=2030-05-14T22:44:18Z&sv=2024-11-04&sr=c&sig=xvHwKrxe5gl24xLcVxD8plgeUwkpnNFnnW1WB9jhBA8%3D"
 
 # Nome do arquivo a ser enviado
-blob_name = "cameras.txt"
+blob_name = "cameras_hik_rs.txt"
 
 # Conteúdo JSON a ser enviado
 data = [
@@ -137,10 +137,10 @@ data = [
         "IP_PORTA": "138.122.112.98:443",
         "APP_KEY": "28054293",
         "SECRET_KEY": "tgQbsqMGcNdplBdlZXcU",
-        "NOME_PONTO_1": "LPR BR287 KM 534-1",
-        "NOME_PONTO_2": "LPR BR287 KM 534-2",
+        "NOME_PONTO_1": "LPR BR287 KM 356-1",
+        "NOME_PONTO_2": "LPR BR287 KM 356-2",
         "LAT": "-29475511",
-        "LONG": "-55527000",
+        "LONG": "-54689568",
         "EMPRESA": "HIKVISION-RS",
         "KEY": "915DC9E2322541649496996A182313"
     },
@@ -152,8 +152,8 @@ data = [
         "IP_PORTA": "138.122.112.98:443",
         "APP_KEY": "28054293",
         "SECRET_KEY": "tgQbsqMGcNdplBdlZXcU",
-        "NOME_PONTO_1": "LPR RS377 KM231-1",
-        "NOME_PONTO_2": "LPR RS377 KM231-2",
+        "NOME_PONTO_1": "LPR RS377 KM231 - 1",
+        "NOME_PONTO_2": "LPR RS377 KM231 - 2",
         "LAT": "-29014000",
         "LONG": "-54543275",
         "EMPRESA": "HIKVISION-RS",
@@ -204,7 +204,14 @@ blob_url = f"{base_url}/{blob_name}?{sas_token}"
 # Criar um BlobClient usando a URL do blob
 blob_client = BlobClient.from_blob_url(blob_url)
 
-# Enviar o conteúdo para o Azure Blob Storage
-blob_client.upload_blob(json_data, overwrite=True)
+# Tentar fazer o upload do conteúdo.
+# overwrite=True permite substituir o arquivo se ele já existir no Azure.
+try:
+    print(f"Tentando enviar o arquivo {blob_name} para o Azure Blob Storage...")
+    blob_client.upload_blob(json_data, overwrite=True)
 
-print(f"O arquivo {blob_name} foi enviado com sucesso.")
+    print(f"O arquivo {blob_name} foi enviado com sucesso para o Azure Blob Storage.")
+
+except Exception as e:
+    print(f"Ocorreu um erro ao enviar o arquivo para o Azure: {e}")
+    print("Verifique a SAS URL, a conexão com a internet e as permissões.")

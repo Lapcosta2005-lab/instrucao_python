@@ -186,7 +186,8 @@ data = [
 ]
 
 # Caminho completo para o arquivo local onde você quer salvar
-caminho_arquivo_local = r"C:\Users\bdi12\Documents\codigos_python\AB\HikAb\cameras.txt"
+#caminho_arquivo_local = r"C:\Users\bdi12\Documents\codigos_python\AB\HikAb\cameras.txt" # Máquina DELL Luiz Costa
+caminho_arquivo_local = r"C:\Users\SEINT-RS\Documents\python_Exercícios\AB\HikAb\cameras.txt" # Máquina THINKPAD Luiz Costa
 
 # Converter a estrutura de dados Python (lista de dicionários) em uma string JSON
 # O indent=4 formata o JSON para ser mais legível no arquivo
