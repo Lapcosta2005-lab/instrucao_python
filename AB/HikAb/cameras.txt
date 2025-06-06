@@ -130,7 +130,7 @@
         "NOME_PONTO_1": "LPR BR287 KM 534-1",
         "NOME_PONTO_2": "LPR BR287 KM 534-2",
         "LAT": "-29475511",
-        "LONG": "-55527000",
+        "LONG": "-54689568",
         "EMPRESA": "HIKVISION-RS",
         "KEY": "915DC9E2322541649496996A182313"
     },
