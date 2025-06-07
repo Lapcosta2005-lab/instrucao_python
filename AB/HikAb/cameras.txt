@@ -178,5 +178,20 @@
         "LONG": "-55527000",
         "EMPRESA": "HIKVISION-RS",
         "KEY": "915DC9E2322541649496996A182313"
+    },
+    {
+        "ID": "13",
+        "COD_CID": "4318101",
+        "CIDADE": "SAO FRANCISCO DE ASSIS",
+        "INDEX": "214",
+        "IP_PORTA": "138.122.112.98:443",
+        "APP_KEY": "28054293",
+        "SECRET_KEY": "tgQbsqMGcNdplBdlZXcU",
+        "NOME_PONTO_1": "LPR RS377 KM308-1",
+        "NOME_PONTO_2": "LPR RS377 KM308-2",
+        "LAT": "-29526861",
+        "LONG": "-55075028",
+        "EMPRESA": "HIKVISION-RS",
+        "KEY": "915DC9E2322541649496996A182313"
     }
 ]
